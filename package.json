@@ -1,0 +1,56 @@
+{
+    "name": "jesse-indicators",
+    "version": "0.0.1",
+    "description": "A Technical indicator library for TypeScript.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jesse-ai/indicators.git"
+    },
+    "bugs": {
+        "url": "https://github.com/jesse-ai/indicators/issues"
+    },
+    "keywords": [
+        "cryptocurrency",
+        "trading-bot",
+        "trading-algorithms",
+        "trading",
+        "crypto",
+        "jesse",
+        "algo-trading",
+        "algorithmic-trading",
+        "typescript"
+    ],
+    "scripts": {
+        "test": "jest"
+    },
+    "engines": {
+        "node": ">=8.11.3",
+        "npm": "~5.6.0"
+    },
+    "jest": {
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        },
+        "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(tsx?)$",
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json",
+            "node"
+        ]
+    },
+    "author": "Sully Fischer <fischersully@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "@types/node": "^10.12.12",
+        "ts-node": "^7.0.1",
+        "typescript": "^3.2.2"
+    },
+    "devDependencies": {
+        "@types/jest": "^23.3.10",
+        "jest": "^23.6.0",
+        "ts-jest": "^23.10.5"
+    }
+}
