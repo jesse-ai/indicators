@@ -1,6 +1,6 @@
 {
     "name": "jesse-indicators",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A Technical indicator library for TypeScript.",
     "repository": {
         "type": "git",
@@ -10,6 +10,9 @@
         "url": "https://github.com/jesse-ai/indicators/issues"
     },
     "keywords": [
+        "indicators", 
+        "TA", 
+        "technical analysis", 
         "cryptocurrency",
         "trading-bot",
         "trading-algorithms",
