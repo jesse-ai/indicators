@@ -20,6 +20,7 @@
         "algorithmic-trading",
         "typescript"
     ],
+    "main": "index.ts",
     "scripts": {
         "test": "jest"
     },
@@ -44,7 +45,9 @@
     "author": "Sully Fischer <fischersully@gmail.com>",
     "license": "MIT",
     "dependencies": {
+        "@types/lodash": "^4.14.120",
         "@types/node": "^10.12.12",
+        "lodash": "^4.17.11",
         "ts-node": "^7.0.1",
         "typescript": "^3.2.2"
     },
@@ -52,5 +55,8 @@
         "@types/jest": "^23.3.10",
         "jest": "^23.6.0",
         "ts-jest": "^23.10.5"
-    }
+    },
+    "files": [
+        "src"
+    ]
 }

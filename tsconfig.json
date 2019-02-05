@@ -1,0 +1,25 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "target": "es2017",
+        "forceConsistentCasingInFileNames": true,
+        "noUnusedLocals": true,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "removeComments": true,
+        "outDir": "dist",
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "node_modules/*",
+                "src/types/*"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts", 
+    ]
+}
