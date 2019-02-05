@@ -1,6 +1,12 @@
 # Indicators 
 A technical analysis library written in TypeScript initially for use in [JesseAI](https://github.com/jesse-ai/jesse). 
 
+## installation 
+This package is pre-install on all Jesse instances. But if you're using this package on a separate, simply run: 
+```
+npm install jesse-indicators
+```
+
 ## Available indicators so far:
 - Simple Moving Average (SMA)
 - Exponential Moving Average (EMA)
