@@ -1,6 +1,6 @@
 {
     "name": "jesse-indicators",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "A Technical indicator library for TypeScript.",
     "repository": {
         "type": "git",
@@ -23,8 +23,10 @@
         "algorithmic-trading",
         "typescript"
     ],
-    "main": "src/index.ts",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
+        "build": "tsc",
         "test": "jest"
     },
     "engines": {
@@ -58,8 +60,5 @@
         "@types/jest": "^23.3.10",
         "jest": "^23.6.0",
         "ts-jest": "^23.10.5"
-    },
-    "files": [
-        "src"
-    ]
+    }
 }

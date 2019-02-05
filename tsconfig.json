@@ -4,6 +4,7 @@
         "module": "commonjs",
         "esModuleInterop": true,
         "target": "es2017",
+        "declaration": true,
         "forceConsistentCasingInFileNames": true,
         "noUnusedLocals": true,
         "moduleResolution": "node",
@@ -21,5 +22,7 @@
     "exclude": [
         "node_modules",
         "**/*.spec.ts", 
+        "test", 
+        "dist"
     ]
 }
