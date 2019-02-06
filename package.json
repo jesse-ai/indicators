@@ -1,6 +1,6 @@
 {
     "name": "jesse-indicators",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "A Technical indicator library for TypeScript.",
     "repository": {
         "type": "git",
@@ -50,14 +50,14 @@
     "author": "Sully Fischer <fischersully@gmail.com>",
     "license": "MIT",
     "dependencies": {
-        "@types/lodash": "^4.14.120",
-        "@types/node": "^10.12.12",
-        "lodash": "^4.17.11",
-        "ts-node": "^7.0.1",
-        "typescript": "^3.2.2"
+        "lodash": "^4.17.11"
     },
     "devDependencies": {
+        "@types/node": "^10.12.12",
         "@types/jest": "^23.3.10",
+        "ts-node": "^7.0.1",
+        "typescript": "^3.2.2", 
+        "@types/lodash": "^4.14.120",
         "jest": "^23.6.0",
         "ts-jest": "^23.10.5"
     }
