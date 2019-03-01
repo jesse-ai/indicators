@@ -1,4 +1,4 @@
-import EMA from ".";
+import EMA, { quickEMA } from '.';
 import _ from 'lodash';
 
 it('Should return current EMA of values[]', () => {
@@ -245,7 +245,12 @@ it('Should return current EMA of values[]', () => {
         91.99
     ];
     expect(_.round(EMA(prices1, 8), 4)).toBe(108.5462);
+});
 
-    let prices2: number[] = [1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-    expect(_.round(EMA(prices2, 8), 2)).toBe(11.47);
+it('Should return current EMA based on previous EMA and current price', () => {
+    let prices2: number[] = [1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+    let preLastEMA: number = EMA(prices2, 8);
+    let lastEMA: number = quickEMA(15, 8, preLastEMA);
+    
+    expect(_.round(lastEMA, 2)).toBe(11.47);
 });
