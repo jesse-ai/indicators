@@ -8,14 +8,14 @@
  */
 export default function SMA(prices: number[], period: number): number {
     if (prices.length !== period) {
-        throw new Error(`Number of values must be the same as the period. `);
+        throw new Error('Number of values must be the same as the period.')
     }
 
-    let sum: number = 0;
+    let sum: number = 0
 
     for (let index = 0; index < prices.length; index++) {
-        sum += prices[index];
+        sum += prices[index]
     }
-    
-    return sum / period;
+
+    return sum / period
 }
