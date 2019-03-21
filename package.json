@@ -1,6 +1,6 @@
 {
     "name": "jesse-indicators",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "A Technical indicator library for TypeScript.",
     "repository": {
         "type": "git",
@@ -27,7 +27,8 @@
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "tsc",
-        "test": "jest"
+        "test": "jest", 
+        "test-watch": "jest --watch"
     },
     "engines": {
         "node": ">=8.11.3",
