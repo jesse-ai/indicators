@@ -10,6 +10,7 @@ npm install jesse-indicators
 ## Available indicators so far:
 - Simple Moving Average (SMA)
 - Exponential Moving Average (EMA)
+- Relative Strength Index (RSI)
 
 ## Contribution guide
 Your contribution through PRs are highly welcome. 
