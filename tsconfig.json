@@ -6,7 +6,7 @@
         "target": "es2017",
         "declaration": true,
         "forceConsistentCasingInFileNames": true,
-        "noUnusedLocals": true,
+        "noUnusedLocals": false,
         "moduleResolution": "node",
         "sourceMap": true,
         "removeComments": true,

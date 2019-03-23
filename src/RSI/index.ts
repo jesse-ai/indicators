@@ -1,3 +1,5 @@
+import { RSIInterface } from "./types";
+
 /**
  * RSI (Relative Strength Index)
  * https://www.tradingview.com/wiki/Relative_Strength_Index_(RSI)
@@ -5,9 +7,9 @@
  * @export
  * @param {number[]} values
  * @param {number} period
- * @returns {number}
+ * @returns {RSIInterface}
  */
-export default function RSI(values: number[], period: number): number {
+export default function RSI(values: number[], period: number): RSIInterface {
     if (values.length !== period) {
         throw new Error('Number of values must be the same as the period.')
     }
@@ -18,7 +20,11 @@ export default function RSI(values: number[], period: number): number {
 
     const RSI: number = 100 - 100 / (1 + RS)
 
-    return RSI
+    return {
+        RSI, 
+        averageGain, 
+        averageLoss
+    }
 }
 
 /**
@@ -30,9 +36,9 @@ export default function RSI(values: number[], period: number): number {
  * @param {number} period
  * @param {number} previousAverageGain
  * @param {number} previousAverageLoss
- * @returns {number}
+ * @returns {RSIInterface}
  */
-export function quickRSI(currentValue: number, previousValue: number, period: number, previousAverageGain: number, previousAverageLoss: number): number {
+export function quickRSI(currentValue: number, previousValue: number, period: number, previousAverageGain: number, previousAverageLoss: number): RSIInterface {
     const change: number = currentValue - previousValue
     let currentGain: number = 0
     let currentLoss: number = 0
@@ -43,7 +49,14 @@ export function quickRSI(currentValue: number, previousValue: number, period: nu
         currentLoss += Math.abs(change)
     }
 
-    return 100 - 100 / (1 + (previousAverageGain * (period - 1) + currentGain) / (previousAverageLoss * (period - 1) + currentLoss))
+    const newAverageGain: number = previousAverageGain * (period - 1) + currentGain
+    const newAverageLoss: number = (previousAverageLoss * (period - 1) + currentLoss)
+
+    return {
+        RSI: 100 - 100 / (1 + newAverageGain / newAverageLoss), 
+        averageGain: newAverageGain, 
+        averageLoss: newAverageLoss
+    }
 }
 
 /**
