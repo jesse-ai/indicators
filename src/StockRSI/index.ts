@@ -4,5 +4,5 @@ export default function StockRSI(RSIs: number[]): number {
     const highestRSI: number = Math.max(...RSIs.slice(0, RSIs.length - 1))
     const currentRSI: number = RSIs[RSIs.length - 1]
 
-    return ((currentRSI - lowestRSI) / (highestRSI - lowestRSI)) * 100
+    return ((currentRSI - lowestRSI) / (highestRSI - lowestRSI))
 }
