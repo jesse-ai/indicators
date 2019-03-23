@@ -35,20 +35,19 @@ const values: number[] = [
 
 it('Should return the current StockRSI', () => {
     expect(values.length).toBe(28)
-    // const RSIs: number[] = []
-    // const period: number = 14
 
-    // let currentRSI: RSIInterface = RSI(values.slice(0, period), period)
-    // console.log(currentRSI)
-    // RSIs.push(currentRSI.RSI)
+    const RSIs: number[] = []
+    const period: number = 14
 
-    // for (let i = period; i < 28; i++) {
-    //     currentRSI = quickRSI(values[i], values[i - 1], period, currentRSI.averageGain, currentRSI.averageLoss)
-    //     RSIs.push(currentRSI.RSI)
-    // }
+    let currentRSI: RSIInterface = RSI(values.slice(0, period), period)
+    RSIs.push(currentRSI.RSI)
 
-    // expect(RSIs.length).toBe(15)
-    // console.log(RSIs)
+    for (let i = period; i < 28; i++) {
+        currentRSI = quickRSI(values[i], values[i - 1], period, currentRSI.averageGain, currentRSI.averageLoss)
+        RSIs.push(currentRSI.RSI)
+    }
 
-    // expect(StockRSI(RSIs)).toBe(44.471222157460431)
+    expect(RSIs.length).toBe(15)
+
+    expect(StockRSI(RSIs)).toBe(44.471222157460431)
 })

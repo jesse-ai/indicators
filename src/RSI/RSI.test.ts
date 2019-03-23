@@ -14,15 +14,14 @@ it('Should return the current RSI based on previous info', () => {
 })
 
 it('Should return RSI (test with a second pair or values)', () => {
-    const values: number[] = 
-    [138.10, 137.96, 137.03, 137.04, 136.99, 137.66, 137.1, 135.76].reverse()
-console.log(values.slice(0, 5))
-    let rsi = RSI(values.slice(0, 5), 5)
-    expect(Math.round(rsi.RSI)).toBe(Math.round(31))
+    const values: number[] = [81.59, 81.06, 82.87, 83, 83.61, 83.15]
 
-    rsi = quickRSI(82.84, 83.15, 5, rsi.averageGain, rsi.averageLoss)
+    let rsi = RSI(values, 6)
+    expect(Math.round(rsi.RSI)).toBe(Math.round(72.03))
+
+    rsi = quickRSI(82.84, 83.15, 6, rsi.averageGain, rsi.averageLoss)
     expect(Math.round(rsi.RSI)).toBe(Math.round(64.93))
 
-    rsi = quickRSI(83.99, 82.84, 5, rsi.averageGain, rsi.averageLoss)
+    rsi = quickRSI(83.99, 82.84, 6, rsi.averageGain, rsi.averageLoss)
     expect(Math.round(rsi.RSI)).toBe(Math.round(75.94))
 })

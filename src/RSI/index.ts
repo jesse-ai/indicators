@@ -17,6 +17,8 @@ export default function RSI(values: number[], period: number): RSIInterface {
     const { averageGain, averageLoss }: { averageGain: number; averageLoss: number } = averageLossAndGain(values)
 
     const RS: number = averageGain / averageLoss
+    
+    // if averageLoss === 0
 
     const RSI: number = 100 - 100 / (1 + RS)
 
@@ -49,8 +51,8 @@ export function quickRSI(currentValue: number, previousValue: number, period: nu
         currentLoss += Math.abs(change)
     }
 
-    const newAverageGain: number = previousAverageGain * (period - 1) + currentGain
-    const newAverageLoss: number = (previousAverageLoss * (period - 1) + currentLoss)
+    const newAverageGain: number = (previousAverageGain * (period - 1) + currentGain) / period
+    const newAverageLoss: number = (previousAverageLoss * (period - 1) + currentLoss) / period
 
     return {
         RSI: 100 - 100 / (1 + newAverageGain / newAverageLoss), 
