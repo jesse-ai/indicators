@@ -1,6 +1,6 @@
 {
     "name": "jesse-indicators",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "A Technical indicator library for TypeScript.",
     "repository": {
         "type": "git",

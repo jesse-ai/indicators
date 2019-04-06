@@ -1,5 +1,3 @@
-import { RSIInterface } from "./types";
-
 /**
  * RSI (Relative Strength Index)
  * https://www.tradingview.com/wiki/Relative_Strength_Index_(RSI)
@@ -7,9 +5,9 @@ import { RSIInterface } from "./types";
  * @export
  * @param {number[]} values
  * @param {number} period
- * @returns {RSIInterface}
+ * @returns
  */
-export default function RSI(values: number[], period: number): RSIInterface {
+export default function RSI(values: number[], period: number) {
     if (values.length !== period) {
         throw new Error('Number of values must be the same as the period.')
     }
@@ -17,14 +15,14 @@ export default function RSI(values: number[], period: number): RSIInterface {
     const { averageGain, averageLoss }: { averageGain: number; averageLoss: number } = averageLossAndGain(values)
 
     const RS: number = averageGain / averageLoss
-    
+
     // if averageLoss === 0
 
     const RSI: number = 100 - 100 / (1 + RS)
 
     return {
-        RSI, 
-        averageGain, 
+        RSI,
+        averageGain,
         averageLoss
     }
 }
@@ -38,9 +36,9 @@ export default function RSI(values: number[], period: number): RSIInterface {
  * @param {number} period
  * @param {number} previousAverageGain
  * @param {number} previousAverageLoss
- * @returns {RSIInterface}
+ * @returns
  */
-export function quickRSI(currentValue: number, previousValue: number, period: number, previousAverageGain: number, previousAverageLoss: number): RSIInterface {
+export function quickRSI(currentValue: number, previousValue: number, period: number, previousAverageGain: number, previousAverageLoss: number) {
     const change: number = currentValue - previousValue
     let currentGain: number = 0
     let currentLoss: number = 0
@@ -55,8 +53,8 @@ export function quickRSI(currentValue: number, previousValue: number, period: nu
     const newAverageLoss: number = (previousAverageLoss * (period - 1) + currentLoss) / period
 
     return {
-        RSI: 100 - 100 / (1 + newAverageGain / newAverageLoss), 
-        averageGain: newAverageGain, 
+        RSI: 100 - 100 / (1 + newAverageGain / newAverageLoss),
+        averageGain: newAverageGain,
         averageLoss: newAverageLoss
     }
 }
