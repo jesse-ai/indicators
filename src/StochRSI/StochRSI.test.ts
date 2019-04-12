@@ -3,7 +3,7 @@ import { RSIInterface } from '../RSI/types'
 import { stoch, smoothedStoch } from '.'
 import values, { rawCandles, expectedRSI, expectedSRSI } from './testData'
 
-it('Should return the current StockRSI', () => {
+it('Should return the current StochRSI', () => {
     const RSIs: number[] = []
     const stochs: number[] = []
     const SRSIs: number[] = []
