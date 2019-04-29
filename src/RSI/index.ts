@@ -58,7 +58,7 @@ export function quickRSI(currentValue: number, previousValue: number, period: nu
     const newAverageGain: number = (previousAverageGain * (period - 1) + currentGain) / period
     const newAverageLoss: number = (previousAverageLoss * (period - 1) + currentLoss) / period
 
-    if (AverageLoss === 0) {
+    if (newAverageLoss === 0) {
         return {
             RSI: 100,
             averageGain: newAverageGain,
